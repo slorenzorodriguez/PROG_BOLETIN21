@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author jalvarezotero
+ * @author slorenzorodriguez
  */
 public class Libro {
       private String titulo;
@@ -85,15 +85,15 @@ public class Libro {
     public static Libro nuevoLibro() {
         Scanner scan = new Scanner(System.in);
 
-        System.out.print("Introduce el titulo: ");
+        System.out.print("Introduce titulo: ");
         String titulo = scan.nextLine();
-        System.out.print("Introduce el autor: ");
+        System.out.print("Introduce autor: ");
         String autor = scan.nextLine();
-        System.out.print("Introduce el isbn ( 9 digitos ) : ");
+        System.out.print("Introduce ISBN *Código de 9 cifras*: ");
         String isbn = scan.next();
-        System.out.print("Introduce el precio: ");
+        System.out.print("Introduce precio: ");
         float precio = scan.nextFloat();
-        System.out.print("Introduce la cantidad: ");
+        System.out.print("Introduce cantidad: ");
         int stock = scan.nextInt();
 
         return new Libro(titulo, autor, isbn, precio, stock);
@@ -106,10 +106,10 @@ public class Libro {
     public boolean venderLibro() {
         if (stock > 0) {
             stock--;
-            System.out.println("Libro " + titulo + " vendido, queda" + ((stock == 1) ? " " : "n ") + stock);
+            System.out.println("Libro " + titulo + " vendido; en stock " + ((stock == 1) ? " " : "n ") + stock);
             return true;
         }
-        System.out.println("No tenemos ese libro en stock");
+        System.out.println("Libro no disponible en stock");
         return false;
     }
 
@@ -118,7 +118,7 @@ public class Libro {
         return "Libro{" +
                 "titulo='" + titulo + '\'' +
                 ", autor='" + autor + '\'' +
-                ", isbn='" + isbn + '\'' +
+                ", ISBN='" + isbn + '\'' +
                 ", precio=" + precio +
                 ", stock=" + stock +
                 '}';

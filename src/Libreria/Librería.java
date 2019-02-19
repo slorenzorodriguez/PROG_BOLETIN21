@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author jalvarezotero
+ * @author slorenzorodriguez
  */
 public class Librería {
     private ArrayList<Libro> libreria = new ArrayList<>();
@@ -35,7 +35,7 @@ public class Librería {
         mostrarInventario();
         int opcion;
         do {
-            System.out.print("Elige un libro: ");
+            System.out.print("Selección de libro: ");
             opcion = scan().nextInt() - 1;
         } while (opcion < 0 || opcion >= libreria.size());
         return libreria.get(opcion);
@@ -46,7 +46,7 @@ public class Librería {
         for (Iterator<Libro> iterator = libreria.iterator(); iterator.hasNext(); ) {
             Libro libro = iterator.next();
             if (libro.getStock() < 1) {
-                System.out.println("Eliminando " + libro.toString());
+                System.out.println("Se eliminará:" + libro.toString());
                 iterator.remove();
             }
         }
